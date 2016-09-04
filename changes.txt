@@ -1,0 +1,13 @@
+Index page
+
+1)Content of Slider
+2)Parties Information
+3)Candidates Info
+4)apni jankari
+
+Signup Page
+
+1)calendar js 
+2)calendar return value
+
+

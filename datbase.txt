@@ -1,0 +1,354 @@
+db.aadhar_info.insert(
+{
+_aadhar_no:'390412598671',
+Name:'Amit Gupta',
+Address:'Mumbai',
+Pincode:'411008',
+Dob:new Date("1996-01-13"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'487741801731',
+Name:'Mohan Gupta',
+Address:'Burhanpur',
+Pincode:'411023',
+Dob:new Date("1963-09-17"),
+Sex:'Male'
+}
+)
+
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'124567986791',
+Name:'Anurag Agrawal',
+Address:'Burhanpur',
+Pincode:'450331',
+Dob:new Date("1995-04-30"),
+Sex:'Male'
+}
+)
+
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'377668884965',
+Name:'Leena Deore',
+Address:'Nashik',
+Pincode:'422009',
+Dob:new Date("1995-12-31"),
+Sex:'Female'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'891731286543',
+Name:'komal Pharate',
+Address:'Mandavgan',
+Pincode:'431005',
+Dob:new Date("1996-04-19"),
+Sex:'Female'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'585138219678',
+Name:'Madhura Rathi',
+Address:'Pune',
+Pincode:'414005',
+Dob:new Date("1995-05-03"),
+Sex:'Female'
+}
+)
+
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432112344321',
+Name:'Vedang Dalal',
+Address:'Pune',
+Pincode:'414005',
+Dob:new Date("1995-10-30"),
+Sex:'Male'
+}
+)
+
+
+
+~~~~~~~~~~~NEW~~~~~~~~~~~~~~~~`
+
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432116857942',
+Name:'Neha Patil',
+Address:'Dhule',
+Pincode:'426987',
+Dob:new Date("1995-06-12"),
+Sex:'Female'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'433492344321',
+Name:'Prajakta Nikam',
+Address:'Malegaon',
+Pincode:'568924',
+Dob:new Date("1996-10-10"),
+Sex:'Female'
+)
+
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432112374321',
+Name:'Ashwini Khandelwal',
+Address:'Amravti',
+Pincode:'574005',
+Dob:new Date("1995-10-01"),
+Sex:'Female'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432112666321',
+Name:'Vishal Ghode',
+Address:'Nashik',
+Pincode:'414089',
+Dob:new Date("1995-07-27"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432200666321',
+Name:'Dhananjay Deore',
+Address:'Nashik',
+Pincode:'422009',
+Dob:new Date("1995-07-14"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432156246321',
+Name:'Mayank Gupta',
+Address:'Akola',
+Pincode:'564979',
+Dob:new Date("1995-04-25"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432119743321',
+Name:'Piyush Kothari',
+Address:'Nagar',
+Pincode:'256089',
+Dob:new Date("1995-07-30"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432349743321',
+Name:'Praful Pawar',
+Address:'Beed',
+Pincode:'256289',
+Dob:new Date("1995-11-20"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'432343213321',
+Name:'Abhinav Shirore',
+Address:'Pune',
+Pincode:'462189',
+Dob:new Date("1995-07-21"),
+Sex:'Male'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'479253213321',
+Name:'Yashashri Hiray',
+Address:'Malegaon',
+Pincode:'427069',
+Dob:new Date("1995-07-26"),
+Sex:'Female'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'349763213321',
+Name:'Kiran Misal',
+Address:'Nagar',
+Pincode:'592469',
+Dob:new Date("1995-03-04"),
+Sex:'Female'
+}
+)
+
+db.aadhar_info.insert(
+{
+_aadhar_no:'23432133216',
+Name:'Aakash Kadam',
+Address:'Pune',
+Pincode:'412469',
+Dob:new Date("1995-06-12"),
+Sex:'Male'
+}
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================Political Parties=========================
+
+db.Political_Parties.insert(
+{
+	Party_name:'Bhartiya Janata Party',
+	Votes:0,
+	Abbrevation:'BJP',
+	Foundation_year:1980,
+	Current_leader:'Amit Shah',
+	icon:'BJP_election_symbol.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Indian National Congress',
+	Votes:0,
+	Abbrevation:'INC',
+	Foundation_year:1885,
+	Current_leader:'Sonia Gandhi',
+	icon:'Indian_National_Congress.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Communist Party of India (Marxist)',
+	Votes:0,
+	Abbrevation:'CPI-M',
+	Foundation_year:1964,
+	Current_leader:'Sitaram Yechuay',
+	icon:'Indian_Election_Symbol_Hammer_Sickle_and_Star.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Communist Party of India',
+	Votes:0,
+	Abbrevation:'CPI',
+	Foundation_year:1925,
+	Current_leader:'Suravaram Sudhakar Reddy',
+	icon:'Indian_Election_Symbol_Ears_of_Corn_and_Sickle.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Bahujan Samaj Party',
+	Votes:0,
+	Abbrevation:'BSP',
+	Foundation_year:1984,
+	Current_leader:'Mayawati',
+	icon:'Indian_Election_Symbol_Elephant.jpg'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Nationalist Congress Party',
+	Votes:0,
+	Abbrevation:'NCP',
+	Foundation_year:1999,
+	Current_leader:'Sharad Pawar',
+	icon:'50px-NationalistCongressParty.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Aam Aadmi Party',
+	Votes:0,
+	Abbrevation:'AAP',
+	Foundation_year:2012,
+	Current_leader:'Arvind Kejriwal',
+	icon:'Aam_aadmi_party_symbol.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Shiv Sena',
+	Votes:0,
+	Abbrevation:'SS',
+	Foundation_year:1966,
+	Current_leader:'Uddhav Thackeray',
+	icon:'Indian_Election_Symbol_Bow_And_Arrow.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Samajwadi Party',
+	Votes:0,
+	Abbrevation:'SP',
+	Foundation_year:1992,
+	Current_leader:'Mulayam Singh Yadav',
+	icon:'Indian_Election_Symbol_Cycle.png'
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'None of the Above',
+	Votes:0,
+	Abbrevation:'NA',
+}
+)
+
+db.Political_Parties.insert(
+{
+	Party_name:'Maharashtra Navnirman Sena',
+	Votes:0,
+	Abbrevation:'MNS',
+}
+)

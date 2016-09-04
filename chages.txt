@@ -1,0 +1,9 @@
+material.js(slider)
+header.css(parallax)
+parallax image
+index.php
+(parallax,footer)
+taglines
+parties ki linking
+candidate page
+favicon chaged

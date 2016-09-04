@@ -1,0 +1,10 @@
+slider height change in materialized js
+menu change in index.html, materialized css
+signin page created/signin modal is added in index.html
+hover color: #ffa73c
+side out menu in index.html for mobile view
+
+
+
+more are comig soon
+

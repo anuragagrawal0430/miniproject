@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="js/jquery-2.1.1.js"></script>
+<!-- Code for Refreshing timer -->
+<script type="text/javascript">
+$(document).ready(function () 
+  {
+    setInterval(function () 
+    {
+        $("#counter").load("session.php");
+    }, 1000);
+  }
+  );
+</script>
+<head>
+	<title>Time Left </title>
+</head>
+<body>
+<div id="counter" align="center">
+</div>
+</body>
+</html>
+

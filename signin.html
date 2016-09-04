@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/header.css" type="text/css" rel="stylesheet" />
+    <link href="css/materialize.css"  type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+
+</head>
+<body>
+<div class="col l5 m6 s12 card" >
+    <div class="login" style="opacity: 0.8; height: auto;">
+        <h5 class="center"> LOGIN</h5>
+
+        <form action="login.php" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input  name="_aadhar_no" id="_aadhar_no" type="text" class="validate" onkeypress="return isNumberKey(event)"  maxlength="12" placeholder="Aadhar Number" required autocomplete="off" />
+                    <label for="_aadhar_no">Aadhar Number</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="password" type="password" id="password" class="validate" placeholder="Password" required required autocomplete="off"  />
+                    <label for="password" >Password</label>
+                </div>
+
+            </div>
+
+            <div class="row right">
+                <a href="forgetpassword.php"> Forgot Password?</a>
+            </div>
+
+            <div class="row center">
+                <button class="btn waves-effect waves-light" style="margin-right: 30px" type="submit" name="action">Log In
+                    <i class="material-icons"></i>
+                </button>
+
+                <a href="signup.html"> <button class="btn waves-effect waves-light"   type="button" name="action">Sign UP
+                    <i class="material-icons"></i>
+                </button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Scripts-->
+
+<script src="js/jquery-2.x.js"></script>
+<script src="js/materialize.js"></script>
+
+
+<!--Only Number Validation Script-->
+<script>
+    function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+> use OVS
+switched to db OVS
+> db.createCollection("aadhar_info")
+{ "ok" : 1 }
+> db.aadhar_info.in
+db.aadhar_info.indexStats(  db.aadhar_info.insert(
+> db.aadhar_info.insert({_aadhar_no:'390412598671',Name:'Amit Gupta',Address:'Mumbai',Pincode:'411008',Dob:new Date("1996-01-13"),Sex:'Male'})
+> db.aadhar_info.insert(
+... {
+... _aadhar_no:'124567986791',
+... Name:'Anurag Agrawal',
+... Address:'Burhanpur',
+... Pincode:'450331',
+... Dob:new Date("1995-04-30"),
+... Sex:'Male'
+... }
+... )
+> db.aadhar_info.insert(
+... {
+... _aadhar_no:'3776688849651',
+... Name:'Leena Deore',
+... Address:'Nashik',
+... Pincode:'422009',
+... Dob:new Date("1995-12-31"),
+... Sex:'Female'
+... }
+... )
+> db.aadhar_info.insert(
+... {
+... _aadhar_no:'891731286543',
+... Name:'komal Pharate',
+... Address:'Mandavgan',
+... Pincode:'431005',
+... Dob:new Date("1996-04-19"),
+... Sex:'Female'
+... }
+... )
+> db.aadhar_info.insert(
+... {
+... _aadhar_no:'585138219678',
+... Name:'Madhura Rathi',
+... Address:'Pune',
+... Pincode:'414005',
+... Dob:new Date("1995-05-3"),
+... Sex:'Female'
+... }
+... )
+> db.aadhar_info.find().pretty()
+{
+	"_id" : ObjectId("55f2a258197153427ab4eacd"),
+	"_aadhar_no" : "390412598671",
+	"Name" : "Amit Gupta",
+	"Address" : "Mumbai",
+	"Pincode" : "411008",
+	"Dob" : ISODate("1996-01-13T00:00:00Z"),
+	"Sex" : "Male"
+}
+{
+	"_id" : ObjectId("55f2a2d2197153427ab4eace"),
+	"_aadhar_no" : "124567986791",
+	"Name" : "Anurag Agrawal",
+	"Address" : "Burhanpur",
+	"Pincode" : "450331",
+	"Dob" : ISODate("1995-04-30T00:00:00Z"),
+	"Sex" : "Male"
+}
+{
+	"_id" : ObjectId("55f2a345197153427ab4eacf"),
+	"_aadhar_no" : "3776688849651",
+	"Name" : "Leena Deore",
+	"Address" : "Nashik",
+	"Pincode" : "422009",
+	"Dob" : ISODate("1995-12-31T00:00:00Z"),
+	"Sex" : "Female"
+}
+{
+	"_id" : ObjectId("55f2a39e197153427ab4ead0"),
+	"_aadhar_no" : "891731286543",
+	"Name" : "komal Pharate",
+	"Address" : "Mandavgan",
+	"Pincode" : "431005",
+	"Dob" : ISODate("1996-04-19T00:00:00Z"),
+	"Sex" : "Female"
+}
+{
+	"_id" : ObjectId("55f2a3fc197153427ab4ead1"),
+	"_aadhar_no" : "585138219678",
+	"Name" : "Madhura Rathi",
+	"Address" : "Pune",
+	"Pincode" : "414005",
+	"Dob" : ISODate("1995-05-02T18:30:00Z"),
+	"Sex" : "Female"
+}
+> db.aadhar_info.update({_aadhar_no : "585138219678"},{{})
+... _aadhar_no:'585138219678',
+... Name:'Madhura Rathi',
+... Address:'Pune',
+... Pincode:'414005',
+... Dob:new Date("1995-05-03"),
+... Sex:'Female'
+... }
+Fri Sep 11 15:25:40.985 SyntaxError: Unexpected token {
+> db.aadhar_info.update({_aadhar_no : "585138219678"},{ _aadhar_no:'585138219678', Name:'Madhura Rathi', Address:'Pune', Pincode:'414005', Dob:new Date("1995-05-03"), Sex:'Female' }
+... }
+Fri Sep 11 15:26:07.241 SyntaxError: Unexpected token }
+> db.aadhar_info.update({_aadhar_no : "585138219678"},{ _aadhar_no:'585138219678', Name:'Madhura Rathi', Address:'Pune', Pincode:'414005', Dob:new Date("1995-05-03"), Sex:'Female' })
+> db.aadhar_info.find().pretty()
+{
+	"_id" : ObjectId("55f2a258197153427ab4eacd"),
+	"_aadhar_no" : "390412598671",
+	"Name" : "Amit Gupta",
+	"Address" : "Mumbai",
+	"Pincode" : "411008",
+	"Dob" : ISODate("1996-01-13T00:00:00Z"),
+	"Sex" : "Male"
+}
+{
+	"_id" : ObjectId("55f2a2d2197153427ab4eace"),
+	"_aadhar_no" : "124567986791",
+	"Name" : "Anurag Agrawal",
+	"Address" : "Burhanpur",
+	"Pincode" : "450331",
+	"Dob" : ISODate("1995-04-30T00:00:00Z"),
+	"Sex" : "Male"
+}
+{
+	"_id" : ObjectId("55f2a345197153427ab4eacf"),
+	"_aadhar_no" : "3776688849651",
+	"Name" : "Leena Deore",
+	"Address" : "Nashik",
+	"Pincode" : "422009",
+	"Dob" : ISODate("1995-12-31T00:00:00Z"),
+	"Sex" : "Female"
+}
+{
+	"_id" : ObjectId("55f2a39e197153427ab4ead0"),
+	"_aadhar_no" : "891731286543",
+	"Name" : "komal Pharate",
+	"Address" : "Mandavgan",
+	"Pincode" : "431005",
+	"Dob" : ISODate("1996-04-19T00:00:00Z"),
+	"Sex" : "Female"
+}
+{
+	"_id" : ObjectId("55f2a3fc197153427ab4ead1"),
+	"_aadhar_no" : "585138219678",
+	"Name" : "Madhura Rathi",
+	"Address" : "Pune",
+	"Pincode" : "414005",
+	"Dob" : ISODate("1995-05-03T00:00:00Z"),
+	"Sex" : "Female"
+}
+
+> db.createCollection('Political_Parties')
+{ "ok" : 1 }
+> db.Political_Parties.insert(
+... {
+... Party_name:'Bhartiya Janata Party',
+... Votes:0,
+... Abbrevation:'BJP',
+... Foundation_year:1980,
+... Current_leader:'Amit Shah',
+... icon:'BJP_election_symbol.png'
+... }
+... )
+> db.Political_Parties.insert(
+... {
+... Party_name:'Indian National Congress',
+... Votes:0,
+... Abbrevation:'INC',
+... Foundation_year:1885,
+... Current_leader:'Sonia Gandhi',
+... icon:'Indian_National_Congress.png'
+... }
+... )
+> db.Political_Parties.insert(
+... {
+... Party_name:'Communist Party of India (Marxist)',
+... Votes:0,
+... Abbrevation:'CPI-M',
+... Foundation_year:1964,
+... Current_leader:'Sitaram Yechuay',
+... icon:'Indian_Election_Symbol_Hammer_Sickle_and_Star.png'
+... }
+... )
+> db.Political_Parties.insert(
+... {
+... Party_name:'Communist Party of India',
+... Votes:0,
+... Abbrevation:'CPI',
+... Foundation_year:1925,
+... Current_leader:'Suravaram Sudhakar Reddy',
+... icon:'Indian_Election_Symbol_Ears_of_Corn_and_Sickle.png'
+... }
+... )
+> db.Political_Parties.insert(
+... {
+... Party_name:'Bahujan Samaj Party',
+... Votes:0,
+... Abbrevation:'BSP',
+... Foundation_year:1984,
+... Current_leader:'Mayawati',
+... icon:'Indian_Election_Symbol_Elephant.jpg'
+... }
+... )
+> b.Political_Parties.insert(
+... {
+... Party_name:'Nationalist Congress Party',
+... Votes:0,
+... Abbrevation:'NCP',
+... Foundation_year:1999,
+... Current_leader:'Sharad Pawar',
+... icon:'50px-NationalistCongressParty.png'
+... }
+... )
+Mon Sep 14 23:57:25.758 ReferenceError: b is not defined
+> db.Political_Parties.insert(
+... {
+... Party_name:'Aam Aadmi Party',
+... Votes:0,
+... Abbrevation:'AAP',
+... Foundation_year:2012,
+... Current_leader:'Arvind Kejriwal',
+... icon:'Aam_aadmi_party_symbol.png'
+... }
+... )
+> b.Political_Parties.insert(
+... {
+... Party_name:'Nationalist Congress Party',
+... Votes:0,
+... Abbrevation:'NCP',
+... Foundation_year:1999,
+... Current_leader:'Sharad Pawar',
+... icon:'50px-NationalistCongressParty.png'
+... }
+... )
+Mon Sep 14 23:58:05.535 ReferenceError: b is not defined
+> db.Political_Parties.insert( { Party_name:'Nationalist Congress Party', Votes:0, Abbrevation:'NCP', Foundation_year:1999, Current_leader:'Sharad Pawar', icon:'50px-NationalistCongressParty.png' } )
+> db.Political_Parties.insert(
+... {
+... Party_name:'Shiv Sena',
+... Votes:0,
+... Abbrevation:'SS',
+... Foundation_year:1966,
+... Current_leader:'Uddhav Thackeray',
+... icon:'Indian_Election_Symbol_Bow_And_Arrow.png'
+... }
+... )
+> 
+> db.Political_Parties.insert(
+... {
+... Party_name:'Samajwadi Party',
+... Votes:0,
+... Abbrevation:'SP',
+... Foundation_year:1992,
+... Current_leader:'Mulayam Singh Yadav',
+... icon:'Indian_Election_Symbol_Cycle.png'
+... }
+... )
+> db.Political_Parties.find().pretty()
+{
+	"_id" : ObjectId("55f7112f8cdd8730f3aa7228"),
+	"Party_name" : "Bhartiya Janata Party",
+	"Votes" : 0,
+	"Abbrevation" : "BJP",
+	"Foundation_year" : 1980,
+	"Current_leader" : "Amit Shah",
+	"icon" : "BJP_election_symbol.png"
+}
+{
+	"_id" : ObjectId("55f711738cdd8730f3aa7229"),
+	"Party_name" : "Indian National Congress",
+	"Votes" : 0,
+	"Abbrevation" : "INC",
+	"Foundation_year" : 1885,
+	"Current_leader" : "Sonia Gandhi",
+	"icon" : "Indian_National_Congress.png"
+}
+{
+	"_id" : ObjectId("55f7117a8cdd8730f3aa722a"),
+	"Party_name" : "Communist Party of India (Marxist)",
+	"Votes" : 0,
+	"Abbrevation" : "CPI-M",
+	"Foundation_year" : 1964,
+	"Current_leader" : "Sitaram Yechuay",
+	"icon" : "Indian_Election_Symbol_Hammer_Sickle_and_Star.png"
+}
+{
+	"_id" : ObjectId("55f711818cdd8730f3aa722b"),
+	"Party_name" : "Communist Party of India",
+	"Votes" : 0,
+	"Abbrevation" : "CPI",
+	"Foundation_year" : 1925,
+	"Current_leader" : "Suravaram Sudhakar Reddy",
+	"icon" : "Indian_Election_Symbol_Ears_of_Corn_and_Sickle.png"
+}
+{
+	"_id" : ObjectId("55f711878cdd8730f3aa722c"),
+	"Party_name" : "Bahujan Samaj Party",
+	"Votes" : 0,
+	"Abbrevation" : "BSP",
+	"Foundation_year" : 1984,
+	"Current_leader" : "Mayawati",
+	"icon" : "Indian_Election_Symbol_Elephant.jpg"
+}
+{
+	"_id" : ObjectId("55f711ad8cdd8730f3aa722d"),
+	"Party_name" : "Aam Aadmi Party",
+	"Votes" : 0,
+	"Abbrevation" : "AAP",
+	"Foundation_year" : 2012,
+	"Current_leader" : "Arvind Kejriwal",
+	"icon" : "Aam_aadmi_party_symbol.png"
+}
+{
+	"_id" : ObjectId("55f7127a8cdd8730f3aa722e"),
+	"Party_name" : "Nationalist Congress Party",
+	"Votes" : 0,
+	"Abbrevation" : "NCP",
+	"Foundation_year" : 1999,
+	"Current_leader" : "Sharad Pawar",
+	"icon" : "50px-NationalistCongressParty.png"
+}
+{
+	"_id" : ObjectId("55f712828cdd8730f3aa722f"),
+	"Party_name" : "Shiv Sena",
+	"Votes" : 0,
+	"Abbrevation" : "SS",
+	"Foundation_year" : 1966,
+	"Current_leader" : "Uddhav Thackeray",
+	"icon" : "Indian_Election_Symbol_Bow_And_Arrow.png"
+}
+{
+	"_id" : ObjectId("55f7128e8cdd8730f3aa7230"),
+	"Party_name" : "Samajwadi Party",
+	"Votes" : 0,
+	"Abbrevation" : "SP",
+	"Foundation_year" : 1992,
+	"Current_leader" : "Mulayam Singh Yadav",
+	"icon" : "Indian_Election_Symbol_Cycle.png"
+}
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/header.css" rel="stylesheet" type="text/css" media="screen,projection">
+    <link href="css/materialize.css" rel="stylesheet" type="text/css" media="screen,projection">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+
+    <title>SIGN UP</title>
+    <style>
+        body
+        {
+            background-image: url("img/indiaSoMe.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container center">
+    <div class="section" style="opacity: .85">
+        <div class="sign_up card">
+         <div class="row">
+            <div class="col l8 m11 s10 offset-l2 offset-s1 offset-m1">
+                <h5 class="pad">SIGN UP FORM</h5>
+                <form method="post" action="signup.php" >
+                    <div class="row">
+                    <div class="input-field col l12 m5 s12 ">
+                        <input type="text" name="_aadhar_no" id="Aadhar" onkeypress="return isNumberKey(event)"  maxlength="12" required />
+                        <label style=" " for="Aadhar">Aadhar Number</label>
+                    </div>
+
+                    <div class="input-field col l12 m5 s12 " style="line-height: 1em;">
+                        <label for="birthdate"><i class="material-icons">perm_contact_calendar</i>Date of Birth</label>
+                        <input name="birthdate" id="birthdate" type="date" class="datepicker" >
+
+
+                    </div>
+
+
+                    <div class="input-field col l6 m5 s12 ">
+                    
+                            <input name="email" id="email" type="email" class="validate">
+                            <label for="email"><i class="material-icons">email</i>  Email</label>
+                    </div>
+                    <div class="input-field col l6 m5 s12 ">
+                        <input  name="mobileno" id="mobileno" type="text" class="validate" onkeypress="return isNumberKey(event)" maxlength="10" required/>
+                        <label for="mobileno"><i class="material-icons">phone</i>Mobile No</label>
+
+
+                    </div>
+
+
+                    <div class="input-field col l12 m11 s12 ">
+                        <input type="password" id="password" name="password" required/>
+                        <label for="password">Password</label>
+                    </div>
+
+                    <div class="input-field col l12 m11 s12 ">
+                        <input type="password" id="Cpassword" name="Cpassword" onkeyup="valid();" required/>
+                        <label for="Cpassword">Confirm Password</label>
+                    </div>
+
+                    <div id="check_pass">
+
+                    </div></div>
+
+                    <div class="row center">
+                        <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" name="action">Sign up
+                            <i class="material-icons"></i>
+                        </button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+<!--Scrpits-->
+<script src="js/jquery-2.x.js"></script>
+<script src="js/materialize.js"></script>
+
+<!--<script src="js/jquery-2.1.1.js"></script>-->
+<!--Only Number Validation Script-->
+<script>
+    function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+</script>
+
+<!--Password Confirm Validation Script-->
+<script type="text/javascript">
+    function valid()
+    {
+
+        var pass="Password Match";
+        var notpass="Password not Match";
+             var passwd=document.getElementById('password');
+             var cpasswd=document.getElementById('Cpassword');
+
+
+
+            if(passwd.value==cpasswd.value) {
+                document.getElementById("check_pass").innerHTML = pass;
+                document.getElementById("check_pass").style.color= '#00DF00';
+            }
+            else {
+                document.getElementById("check_pass").innerHTML= notpass;
+                document.getElementById("check_pass").style.color= '#FF0000';
+
+            }
+
+    }
+
+</script>
+
+
+<!--datepicker script-->
+
+<script type="text/javascript">
+$('.datepicker').pickadate({
+selectMonths: true, // Creates a dropdown to control month
+selectYears: 100 // Creates a dropdown of 15 years to control year
+});
+
+</script>
+</body>
+
+
+</html>
