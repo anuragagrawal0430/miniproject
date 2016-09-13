@@ -50,7 +50,7 @@ $search=$collection1->find();
 
 foreach ($search as $document) 
 {
-	#Checking For Aadhar No.
+	#Checking For Aadhar No./home/anurag
 	if($document["_aadhar_no"]==$aadhar_no)
 		{
 			#Mail Being Sent

@@ -1,6 +1,6 @@
 <?php
 session_start('admin');
-if(!isset($_SESSION['pass']))
+if(isset($_SESSION['pass']))
 {
 	echo "<script type='text/javascript'> alert('You Don\'t have the proper Rights!!'); location='admin_login.php';</script>";
 	die();
@@ -32,7 +32,7 @@ if(!isset($_SESSION['pass']))
         {
             color: darkorange;
             font-size: 21px;
-            text-shadow: 1px 1px 2px rgba(206, 107, 0, 0.65);
+            text-shadow: 1px 1px 1px rgba(206, 107, 0, 0.65);
         }
 
         .tabs .indicator
@@ -44,14 +44,14 @@ if(!isset($_SESSION['pass']))
         {
             color: rgba(23, 46, 255, 0.98);
             font-size: 21px;
-            text-shadow: 1px 1px 2px rgba(50, 57, 218, 0.86);
+            text-shadow: 1px 1px 1px rgba(50, 57, 218, 0.86);
         }
 
         ul.tabs li.tab a.del
         {
             color: rgb(0, 235, 0);
             font-size: 21px;
-            text-shadow: 1px 1px 2px rgba(0, 140, 0, 0.86);
+            text-shadow: 1px 1px 1px rgba(0, 53, 0, 0.86);
         }
 
         ul.tabs li.tab a.create:hover
@@ -68,7 +68,11 @@ if(!isset($_SESSION['pass']))
             color: rgba(0, 236, 0, 0.32);
         }
 
+        div.admin_title span.center{
 
+            font-size: 3em;
+            padding-left: 4em;
+        }
     </style>
 </head>
 
@@ -77,11 +81,13 @@ if(!isset($_SESSION['pass']))
 <div class="admin">
     <div class="container card">
         <div class="section">
-           <h3 class="center"> ADMIN-PANEL </h3>
+            <div class="admin_title">
+           <span class="center"> ADMIN-PANEL </span>
            <div style="float:right" >
                 <a href="logout.php"><button class="btn waves-effect waves-light" style="margin-right: 30px;" name="action">Log Out
                 <i class="material-icons"></i>
                 </button></a>
+            </div>
             </div>
 
             <div class="row">
@@ -168,24 +174,38 @@ if(!isset($_SESSION['pass']))
 
                                         <br><br><br><br>
 
-                                <div class="input-field col l10 m5 s12 ">
+                                <div class="input-field col l5 m5 s12 ">
                                     <input type="text" name="name" id="name" required />
                                     <label for="name">Full Name</label>
                                 </div>
 
 
-                                <div class="input-field col l5 m5 s12 ">
+                                <div class="input-field col l5 m5 s12 " style="line-height: 1em;">
+                                    <input name="dob" id="birthdate" type="date" class="datepicker" >
+                                    <label for="birthdate">Date of Birth</label>
+                                </div>
 
-                                    <input name="email" id="email" type="email" class="validate">
-                                    <label for="email">Email</label>
+                                <div class="input-field col s12 l5" >
+                                    <label for="gender" >Gender</label>
+
+                                    <p>
+                                        <input name="group2" type="radio" id="male_delete" "/>
+                                        <label for="male_delete">Male</label>
+
+                                        <input name="group2" type="radio" id="female_delete" "/>
+                                        <label for="female_delete">Female</label>
+                                    </p>
                                 </div>
 
                                 <div class="input-field col l5 m5 s12 ">
-                                    <input  name="mobileno" id="mobileno" type="text" class="validate" onkeypress="return isNumberKey(event)" maxlength="10" required/>
-                                    <label for="mobileno">Mobile No</label>
-
+                                    <input type="text" name="pin_code" id="pin_code" onkeypress="return isNumberKey(event)"  maxlength="6"  />
+                                    <label for="pin_code">Pin Code</label>
                                 </div>
 
+                                <div class="input-field col l10 m5 s12 ">
+                                    <input type="text" name="address" id="address"  />
+                                    <label for="address">Address</label>
+                                </div>
                                 <div class="col l6 m5 s12">
                                     <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" name="action">Update
                                         <i class="material-icons"></i>
@@ -214,33 +234,33 @@ if(!isset($_SESSION['pass']))
 
                             <br><br><br><br>
                             <div class="input-field col l5 m5 s12 ">
-                                <input type="text" name="name" id="name" required />
+                                <input type="text" name="name" id="name" disabled  />
                                 <label for="name">Full Name</label>
                             </div>
                             <div class="input-field col l5 m5 s12 " style="line-height: 1em;">
-                                <input name="dob" id="birthdate" type="date" class="datepicker">
+                                <input name="dob" id="birthdate" type="date" class="datepicker" disabled>
                                 <label for="birthdate">Date of Birth</label>
                             </div>
 
-                            <div class="input-field col s12 l5">
-                                    <label for="gender">Gender</label>
+                            <div class="input-field col s12 l5" >
+                                    <label for="gender" >Gender</label>
 
                                     <p>
-                                        <input name="group2" type="radio" id="male_delete" />
+                                        <input name="group2" type="radio" id="male_delete" disabled="disabled"/>
                                         <label for="male_delete">Male</label>
 
-                                        <input name="group2" type="radio" id="female_delete" />
+                                        <input name="group2" type="radio" id="female_delete" disabled="disabled"/>
                                         <label for="female_delete">Female</label>
                                     </p>
                                 </div>
 
                             <div class="input-field col l5 m5 s12 ">
-                                <input type="text" name="pin_code" id="pin_code" onkeypress="return isNumberKey(event)"  maxlength="6" required />
+                                <input type="text" name="pin_code" id="pin_code" onkeypress="return isNumberKey(event)"  maxlength="6" disabled />
                                 <label for="pin_code">Pin Code</label>
                             </div>
 
                             <div class="input-field col l10 m5 s12 ">
-                                <input type="text" name="address" id="address" required />
+                                <input type="text" name="address" id="address" disabled />
                                 <label for="address">Address</label>
                             </div>
 

@@ -38,7 +38,7 @@ if(isset($_POST['user']) && isset($_POST['admin_pass']))
             <div class="row">
                 <div class="col l8 m11 s10 offset-l2 offset-s1 offset-m1">
                     <h5 class="pad">Admin-Login</h5>
-                    <form method="post"  >
+                    <form method="post">
                         <div class="row">
                             <div class="input-field col l12 m5 s12 ">
                                 <input type="text" name="user" id="user" required />

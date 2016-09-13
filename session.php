@@ -9,7 +9,7 @@ date_default_timezone_set('Asia/Kolkata');
 $starttime=strtotime('16-06-25 13:45:00');
 
 #Setting a End time.
-$endtime=strtotime('16-10-05 14:00:00');
+$endtime=strtotime('17-10-05 14:00:00');
 
 #time difference calculaation
 $remaining=abs(time()-$starttime);
