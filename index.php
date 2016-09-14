@@ -1,7 +1,7 @@
 <?php
 
 #To display Error if any on php file
-ini_set('display_errors',1);
+//ini_set('display_errors',1);
 
 #Connecting Mongodb
 $connection = new MongoClient();
@@ -19,7 +19,7 @@ session_start();
 $starttime=strtotime('16-06-22 18:11:00');
 $endtime=strtotime('17-10-10 18:48:30');
 
-echo "<script>console.log($starttime,$endtime);</script>";
+//echo "<script>console.log($starttime,$endtime);</script>";
 
 $_SESSION['endtime']=$endtime;
 $_SESSION['starttime']=$starttime;

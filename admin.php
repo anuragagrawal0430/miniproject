@@ -1,6 +1,6 @@
 <?php
 session_start('admin');
-if(isset($_SESSION['pass']))
+if(!isset($_SESSION['pass']))
 {
 	echo "<script type='text/javascript'> alert('You Don\'t have the proper Rights!!'); location='admin_login.php';</script>";
 	die();
@@ -100,14 +100,14 @@ if(isset($_SESSION['pass']))
                 </div>
 
 
-<!--                create-->
+<!--       ===============================================Create====================================-->
 
                 <div id="create" class="col s12 offset-l1" style="padding-top: 40px;">
-                    <form method="post" action="create.php" >
+                    <form method="post" action="create.php" name="form">
                         <div class="row">
                             <div class="center">
                             <div class="input-field col l5 m5 s12 ">
-                                <input type="text" name="_aadhar_no" id="Aadhar" onkeypress="return isNumberKey(event)"  maxlength="12" required />
+                                <input type="text" name="_aadhar_no" id="aadhar" onkeypress="return isNumberKey(event)"  maxlength="12" required />
                                 <label for="Aadhar">Aadhar Number</label>
                             </div>
 
@@ -153,22 +153,22 @@ if(isset($_SESSION['pass']))
                 </div>
 
 
+                <!--       ===============================================Update====================================-->
 
-<!--                update-->
 
 
                 <div id="update" class="col s12 offset-l1"  style="padding-top: 40px;">
-                    <form method="post" action="update.php" >
+                    <form method="post" action="" name="form">
                         <div class="row">
                             <div class="center">
                                 <div class="input-field col l5 m5 s12 ">
-                                    <input type="text" name="_aadhar_no" id="Aadhar" onkeypress="return isNumberKey(event)"  maxlength="12" required />
+                                    <input type="text" name="_aadhar_no" id="aadhar" onkeypress="return isNumberKey(event)"  maxlength="12" required />
                                     <label for="Aadhar">Aadhar Number</label>
                                 </div>
 
 
                                 <div class="col l5 m5 s12">
-                                    <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" name="action">Search
+                                    <button class="btn waves-effect waves-light" style="margin-right: 30px;" id="search" name="search" onclick="search()">Search
                                         <i class="material-icons"></i>
                                     </button></div>
 
@@ -217,9 +217,10 @@ if(isset($_SESSION['pass']))
                     </div>
 
 
-<!--                delete-->
+                <!-- ===============================================Delete====================================-->
+
             <div id="del" class="col s12 offset-l1"  style="padding-top: 40px;">
-                <form method="post" action="delete.php" >
+                <form method="post" action="delete.php" name="form" id="delete">
                     <div class="row">
                         <div class="center">
                             <div class="input-field col l5 m5 s12 ">
@@ -228,17 +229,17 @@ if(isset($_SESSION['pass']))
                             </div>
 
                             <div class="col l5 m5 s12">
-                                <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" name="action">Search
+                                <button class="btn waves-effect waves-light" style="margin-right: 30px;" id="search" name="search" onclick="search()">Search
                                     <i class="material-icons"></i>
                                 </button></div>
 
                             <br><br><br><br>
                             <div class="input-field col l5 m5 s12 ">
-                                <input type="text" name="name" id="name" disabled  />
+                                <input type="text" name="name" id="name" disabled />
                                 <label for="name">Full Name</label>
                             </div>
                             <div class="input-field col l5 m5 s12 " style="line-height: 1em;">
-                                <input name="dob" id="birthdate" type="date" class="datepicker" disabled>
+                                <input name="dob" id="birthdate" type="date" disabled>
                                 <label for="birthdate">Date of Birth</label>
                             </div>
 
@@ -267,7 +268,7 @@ if(isset($_SESSION['pass']))
 
 
                             <div class="col l12">
-                                <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" name="action">Delete
+                                <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" id="delete" name="delete" disabled>Delete
                                     <i class="material-icons"></i>
                                 </button>
                             </div>
@@ -312,11 +313,52 @@ $('select').material_select();
     <!--Only Number Validation Script-->
     <script>
         function isNumberKey(evt){
-            var charCode = (evt.which) ? evt.which : event.keyCode
+            var charCode = (evt.which) ? evt.which : event.keyCode ;
             if (charCode > 31 && (charCode < 48 || charCode > 57))
                 return false;
             return true;
         }
     </script>
+
+<script>
+
+
+    document.getElementById("search").addEventListener("click",function search(e){
+        var aadhar_no = $("form#delete #Aadhar").val();
+        var formdata ={
+            aadhar:aadhar_no
+        };
+
+      $.ajax({
+          url : "search.php",
+          method : 'POST',
+          data : formdata,
+          success : function (data)
+          {
+              data = JSON.parse(data);
+              if(data==0)
+              {
+                  alert('No Records Found');
+              }
+              else {
+                  $("form #name").val(data["Name"]);
+                  $("form #birthdate").val(data["Dob"]["sec"]);
+                  $("form #pin_code").val(data["Pincode"]);
+                  $("form #address").val(data["Address"]);
+                  $("button").removeAttr("disabled");
+                  if (data["Sex"] == 'Male') {
+                      $("#male_delete").attr("checked");
+                  }
+                  else {
+                      $("#female_delete").attr("checked");
+                  }
+              }
+          }});
+        e.preventDefault();
+    });
+
+
+</script>
+
 </body>
 </html>

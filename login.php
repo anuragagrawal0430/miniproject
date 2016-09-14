@@ -8,7 +8,7 @@ session_start();
 $_SESSION["user"]=$_POST["_aadhar_no"];
 
 #To display Error if any on php file
-/*ini_set('display_errors',1);*/
+ini_set('display_errors',1);
 
 #Connecting Mongodb
 $connection = new MongoClient();
